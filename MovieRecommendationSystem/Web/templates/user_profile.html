@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Filmajánló rendszer</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+<body>
+    <div class="main_title">
+        <h1>{{user[1]}}</h1>
+    </div>
+    <h2>Kor: {{user[3]}}</h2>
+    {% if user[4] == 0 %}
+    <h2>Nem: Nő</h2>
+    {% else %}
+    <h2>Nem: Férfi</h2>
+    {% endif %}
+    
+    <form action="/check_update_username" method="post">
+         <label>Új felhasználónév</label><br />
+         <input type="text" name="username" required />
+         <input type="submit" value="Felhasználónév megváltoztatása" />
+    </form>
+  
+    <form action="/update_password" method="post">
+        <label>Új jelszó</label><br />
+        <input type="password" name="password" required/>
+        <input type="submit" value="Jelszó megváltoztatása" />
+    </form>
+
+    <div class="topright">
+        <a href="/main_page">Vissza a főoldalra</a>
+        <br />
+        <a href="/delete_account">Fiók törlése</a>
+    </div>
+</body>
+</html>

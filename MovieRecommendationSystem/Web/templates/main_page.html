@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Filmajánló rendszer</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+<body>
+    <div class="main_title">
+        <h1>Üdvözöljük, {{ user[1] }}!</h1>
+    </div>
+    <br />
+    
+    <form action="/search_list" method="post">
+        <label>Film keresése</label><br />
+        <input type="search" name="text" />
+    </form>
+    <form action="/search_list_original_title" method="post">
+        <label>Film keresése eredeti cím alapján</label><br />
+        <input type="search" name="original_title" />
+    </form>
+    
+    <p>
+        <a href="/rated_movies">Értékelt filmek megtekintése</a>
+    </p>
+    <p>
+        <a href="/recommendations">Ajánlások megtekintése</a>
+    </p>
+    <div class="topright">
+        <a href="/sign_out">Kijelentkezés</a>
+        <br />
+        <a href="/user_profile">Profil</a>
+    </div>
+</body>
+</html>

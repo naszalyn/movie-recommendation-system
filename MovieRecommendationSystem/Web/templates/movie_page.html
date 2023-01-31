@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Filmajánló rendszer</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+<body>
+    <div class="main_title"><h1>{{movie[1]}}</h1></div>
+    <h2>{{movie[0]}}</h2>
+    {% if rating is not none %}
+    <p>
+        Aktuális értékelésem: {{rating}}
+        <form action="/delete_rating/{{imdb_id}}">
+            <input type="submit" value="Értékelés törlése" />
+        </form>
+    </p>
+    {% endif %}
+
+    <form action="/rate/{{imdb_id}}" method="post">
+        <label>Értékelés</label>
+        <br />
+        <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <input type="submit" value="Elküld" />
+    </form>
+
+    <p></p>    
+
+    <h3>Rendező{{"k" if directors|length > 1}}</h3>
+    <div class="forp">
+        {% for i in directors%}
+            {{ i+", " if not loop.last else i }}
+        {% endfor %}
+    </div>
+
+    <h3>Színész{{"ek" if actors|length > 1}}</h3>
+    <div class="forp">
+        {% for i in actors%}
+        {{ i+", " if not loop.last else i }}
+        {% endfor %}
+    </div>
+
+    <h3>Műfaj{{"ok" if genres|length > 1}}</h3>
+    <div class="forp">
+        {% for i in genres%}
+          {{ i+", " if not loop.last else i }}
+        {% endfor %}
+    </div>
+
+    <h3>Kulcsszavak</h3>
+    <div class="forp">
+        {% for i in keywords%}
+            {{ i+", " if not loop.last else i }}
+        {% endfor %}
+    </div>
+
+    <div class="topright">
+        <a href="/main_page">Vissza a főoldalra</a><br />
+        <a href='/recommendations'>Vissza az ajánlásokhoz</a><br />
+        <a href='/rated_movies'>Vissza az értékelt filmekhez</a><br />
+    </div>
+</body>
+</html>

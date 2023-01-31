@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Filmajánló rendszer</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+<body>
+    <table>
+        {% for i in data %}
+        <tr>
+            <td>{{i[2]}}</td>
+            <td>{{i[1]}}</td>
+            <td><a href="{{ url_for('get_movie', imdb_id = i[0]) }}">Megtekint</a></td>
+        </tr>        
+        {% endfor %}
+    </table>
+    <div class="topright">
+        <a href="/main_page">Vissza a főoldalra</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #173f5f;
+    color: white;
+}
+
+.mainheader h1 {
+    border-bottom: 10px solid #9a031e;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 48px;
+    padding: 8px 8px 8px 8px;
+}
+
+form label {
+    font-size: 18px;
+}
+
+form input[type=text], input[type=password], input[type=number], select {
+    font-size: 18px;
+    padding: 6px 10px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+form input[type=radio], input[type=checkbox] {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+form input[type=submit] {
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: white;
+    background-color: slategrey;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 4px 4px;
+}
+
+form input[type=search] {
+    font-size: 18px;
+    padding: 2px 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 600px;
+    padding: 6px 10px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.signform {
+    display: block;
+    text-align: center;
+}
+
+    .signform form {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .signform h2 {
+        font-size: 30px;
+    }
+
+
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+    
+p {
+    font-size: 18px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+table {
+    width: auto;
+    margin-top: 50px;
+    border: 2px solid #003049;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+    background-color: #003049;    
+}
+
+td {
+    height: 50px;
+    font-size: 18px;
+    vertical-align: central;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 20px;
+    padding-right: 70px;
+}
+
+.main_title h1 {
+    border-bottom: 3px solid #9a031e;
+    display: inline;
+    padding-bottom: 8px;
+    padding-right: 50px;
+}
+
+h3 {
+    background-color: #003049;
+    padding: 5px 5px;
+    margin: 8px 0 8px 0;
+}
+
+.forp {
+    font-size: 16px;
+    padding: 0 5px;
+    margin: 2px 0 0 0;
+}
